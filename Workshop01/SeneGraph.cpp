@@ -1,4 +1,14 @@
 /***********************************************************************
+		--Workshop 01 Part 01--
+Name:			Pattarawan Sarvaneeyawong
+Email:			psaravaneeyawong@myseneca.ca
+Student Id:		130618234
+Date Complete:	
+
+
+***********************************************************************/
+
+/***********************************************************************
 Workshop 1: Compiling modular source code
 File	SeneGraph.cpp
 Version 2.0
