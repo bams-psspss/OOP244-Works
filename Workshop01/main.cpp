@@ -18,9 +18,13 @@ void samplesFirst();
 
 
 int main() {
+    const int MAX_NO_OF_SAMPLES = 20;
+    const int GRAPH_WIDTH = 65;
+
     int noOfSamples = 0;
     int samples[MAX_NO_OF_SAMPLES] = { 0 };
     bool done = false;
+
     labelLine(33, "Welcome to SeneGraph");
     while (!done) {
         switch (menu(noOfSamples)) {
