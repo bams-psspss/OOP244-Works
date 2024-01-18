@@ -12,7 +12,6 @@ Date Completed:		Wednesday 17 January 2024
 using namespace std;
 namespace seneca
 {
-    const int MAX_NO_OF_SAMPLES = 20;
     const int GRAPH_WIDTH = 65;
 
     // Fills the samples array with the statistic samples

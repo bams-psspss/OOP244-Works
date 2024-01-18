@@ -19,7 +19,6 @@ void samplesFirst();
 
 int main() {
     const int MAX_NO_OF_SAMPLES = 20;
-    const int GRAPH_WIDTH = 65;
 
     int noOfSamples = 0;
     int samples[MAX_NO_OF_SAMPLES] = { 0 };
