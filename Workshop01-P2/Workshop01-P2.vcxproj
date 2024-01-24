@@ -136,7 +136,7 @@
     <ClCompile Include="graph.cpp" />
     <ClCompile Include="io.cpp" />
     <ClCompile Include="main.cpp" />
-    <ClCompile Include="StMarks.cpp" />
+    <ClCompile Include="StMark.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="file.h" />
