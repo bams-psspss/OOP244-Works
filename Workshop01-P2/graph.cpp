@@ -61,7 +61,7 @@ namespace seneca
         int range = 100;
         labelLine(GRAPH_WIDTH + 14, label);
     
-            for (int i = 0; i < noOfSamples; i++)
+            for (int i = noOfSamples - 1; i >= 0; i--)
             {
                 cout << range;
                 if (range < 100 && range > 0)

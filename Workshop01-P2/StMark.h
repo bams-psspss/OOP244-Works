@@ -18,7 +18,7 @@ Name            Date            Reason
 
 #define MAX_NUM_REC 1000
 
-#define RANGE 11
+#define RANGE 10
 
 namespace seneca 
 {
@@ -35,21 +35,23 @@ namespace seneca
    
 
     /// <summary>
-/// Tries to open the students' mark data file. 
-/// If successful it will print a report based on the 
-/// date in the file.
-/// </summary>
-/// <param name="filename">, holds the data file name</param>
-/// <returns>True if the date files is opened succesfully, 
-/// otherwise returns false</returns>
-
+    /// Tries to open the students' mark data file. 
+    /// If successful it will print a report based on the 
+    /// date in the file.
+    /// </summary>
+    /// <param name="filename">, holds the data file name</param>
+    /// <returns>True if the date files is opened succesfully, 
+    /// otherwise returns false</returns>
     bool printReport(const char* filename);
 
+    //Grouping the score into group from 100-0
+    //Start from index 9
+    //index 9 = 91 - 100 score
     void groupingScore(StMark* student, int numOfRec, int* score);
 
-    void whatIf(StMark* student, int numOfRec, int* score);
-
-
+    //Sorting student according to the mark
+    //Descending order  
+    void sortingScore(StMark* student, int numOfRec);
 
 }
 #endif // !SENECA_STMARK_H
