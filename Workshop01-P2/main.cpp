@@ -30,9 +30,11 @@ int main()
       cout << "Enter filename to generate report for or 'X' to exit:\n> ";
       cin >> filename;
 
-      if ((filename[0] == 'X' || filename[0] == 'x') && filename[1] == 0) 
+      if ((filename[0] == 'X' || filename[0] == 'x') && filename[1] == 0)
       {
-         done = true;
+          printReport(filename);
+          done = true;
+
       }
 
       else if (!printReport(filename)) 

@@ -18,11 +18,13 @@ namespace seneca {
         }
     }
 
+    //Read single record
     bool readMark(StMark* markRec)
     {
         return fscanf(datafile, "%[^,],%[^,],%d\n", markRec->name, markRec->surname, &markRec->mark) == 3;
     }
 
+    //Read multiple record
     int readMarks(StMark* marks)
     {
         int cnt = 0;

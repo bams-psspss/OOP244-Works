@@ -18,18 +18,21 @@ Name            Date            Reason
 
 #define MAX_NUM_REC 1000
 
+#define RANGE 11
+
 namespace seneca 
 {
 
     /// <summary>
     /// Record of a mark received by a student.
     /// </summary>
-    struct StMark {
+    struct StMark 
+    {
         char name[F_NAME_LEN + 1];
         char surname[L_NAME_LEN + 1];
         int mark;
     };
-
+   
 
     /// <summary>
 /// Tries to open the students' mark data file. 
@@ -41,6 +44,12 @@ namespace seneca
 /// otherwise returns false</returns>
 
     bool printReport(const char* filename);
+
+    void groupingScore(StMark* student, int numOfRec, int* score);
+
+    void whatIf(StMark* student, int numOfRec, int* score);
+
+
 
 }
 #endif // !SENECA_STMARK_H
