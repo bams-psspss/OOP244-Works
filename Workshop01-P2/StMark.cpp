@@ -127,7 +127,7 @@ namespace seneca
 			{
 				if (student[j].mark < student[j + 1].mark)
 				{
-					swap(student[j].mark, student[j + 1].mark);
+					swap(student[j], student[j + 1]);
 				}
 			}
 		}
