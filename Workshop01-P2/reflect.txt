@@ -1,0 +1,10 @@
+/*************************************************
+Name:			Pattarawan Saravaneeyawong
+Seneca Email:		psaravaneeyawong@myseneca.ca
+Student ID:		130618234
+Date Completed:		Wednesday 24 January 2024
+**************************************************/
+
+Things I learn while I do this workshop is that, modular could be really useful sometime. In IPC144 I never think of modular before, because I find it very complicated doing all of that. Personally I am NOT YET  mastered with some logic, pointers and address, but while doing this project and use alot of it by passing by pointers in the void function, it makes me a little bit more comfortable on using them.
+
+The issue I found in this workshop, is that I just have difficult time on truly understand and know exactly how the given code work. I try to just blind understand it, but I can't really implement it into the code. Another difficulty I have is, I am not sure about my coding layout or style. In IPC144, I study with Professor Cameron, awesome professor, he have his standard on the code, and almost everything must be clean and organize, so I am just confuse by it.
