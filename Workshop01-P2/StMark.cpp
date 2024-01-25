@@ -87,6 +87,10 @@ namespace seneca
 			{
 				score[9]++;
 			}
+			else if (whole == 0 || whole == 1 && !remain)
+			{
+				score[0]++;
+			}
 			else if (remain)
 			{
 				score[whole]++;
