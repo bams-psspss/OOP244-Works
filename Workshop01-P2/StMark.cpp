@@ -62,9 +62,13 @@ namespace seneca
 					cout << " ";
 				}
 				cout << ": " << "[" << student[i].mark;
-				if (student[i].mark < 100)
+				if (student[i].mark < 100 && student[i].mark > 9)
 				{
 					cout << " ";
+				}
+				else if (student[i].mark < 10 && student[i].mark >= 0)
+				{
+					cout << "  ";
 				}
 				cout << "] ";
 				cout << student[i].name << " " << student[i].surname << endl;
