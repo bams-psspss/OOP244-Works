@@ -34,8 +34,6 @@ namespace seneca
 		bool success = false;
 		int numOfRec;
 		int i;
-		int whole, remainder;
-		;
 
 		if (openFile(filename))
 		{
