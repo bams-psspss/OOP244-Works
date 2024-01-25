@@ -46,10 +46,10 @@ namespace seneca
 			printGraph(score, RANGE, "Students' mark distribution");
 
 			//Sorting the Score
-			sortingScore(student, numOfRec);
+			//sortingScore(student, numOfRec);
 
 
-			for (i = 0; i < numOfRec; i++)
+			/*for (i = 0; i < numOfRec; i++)
 			{
 				cout << i + 1;
 				if (i + 1 > 0 && i + 1 < 10)
@@ -58,7 +58,7 @@ namespace seneca
 				}
 				cout << " : " << "[" << student[i].mark << " ]";
 				cout << student[i].name << " " << student[i].surname << endl;
-			}
+			}*/
 			closeFile();
 			success = true;
 		}
@@ -80,10 +80,15 @@ namespace seneca
 
 		for (i = 0; i < numOfRec; i++)
 		{
+			whole = 0;
+			remain = 0;
+
 			whole = student[i].mark / 10;
 			remain = student[i].mark % 10;
-
-			if (whole == 10)
+			
+			//cout << whole << " " << remain << endl;
+			 
+			if (whole == 10 && remain == 0)
 			{
 				score[9]++;
 			}
@@ -91,13 +96,18 @@ namespace seneca
 			{
 				score[0]++;
 			}
-			else if (whole < 10 && whole > 0 && remain)
+
+			else if ((whole < 10 && whole > 0) && remain != 0)
 			{
 				score[whole]++;
 			}
+			else if ((whole < 10 && whole > 0) && remain == 0)
+			{
+				score[whole - 2];
+			}
 			else
 			{
-				score[whole - 1];
+				cout << "error" << endl;
 			}
 		}
 	}
