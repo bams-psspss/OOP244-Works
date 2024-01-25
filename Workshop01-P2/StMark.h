@@ -20,14 +20,10 @@ Date Completed:		Wednesday 24 January 2024
 #ifndef SENECA_STMARK_H
 #define SENECA_STMARK_H
 
-#define FMT_LEN 50
 #define F_NAME_LEN 20
 #define L_NAME_LEN 30
-
 #define MAX_NUM_REC 1000
-
 #define RANGE 10
-
 namespace seneca 
 {
 
@@ -42,6 +38,7 @@ namespace seneca
     };
    
 
+
     /// <summary>
     /// Tries to open the students' mark data file. 
     /// If successful it will print a report based on the 
@@ -55,7 +52,7 @@ namespace seneca
     //Grouping the score into group from 100-0
     //Start from index 9
     //index 9 = 91 - 100 score
-    void groupingScore(StMark* student, int numOfRec, int* score);
+    void groupingScore(StMark* student, int numOfRec, int* score, int range);
 
     //Sorting student according to the mark
     //Descending order  

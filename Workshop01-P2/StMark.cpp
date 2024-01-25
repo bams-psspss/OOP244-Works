@@ -28,25 +28,28 @@ namespace seneca
 
 	bool printReport(const char* filename)
 	{
-		StMark student[MAX_NO_RECS + 1] = { {0} };		
-		int score[RANGE + 1] = { 0 };
+		StMark student[MAX_NUM_REC + 1] = { {0} };		
+		int score[RANGE + 1] = { };
 
 		bool success = false;
 		int numOfRec;
 		int i;
-
+		int whole, remainder;
+		;
 
 		if (openFile(filename))
 		{
 			numOfRec = readMarks(student);
 
-			groupingScore(student, numOfRec, score);
+		
+			groupingScore(student, numOfRec, score, RANGE);
 
 			//Print the graph
 			printGraph(score, RANGE, "Students' mark distribution");
 
 			//Sorting the Score
 			sortingScore(student, numOfRec);
+
 
 			for (i = 0; i < numOfRec; i++)
 			{
@@ -58,10 +61,7 @@ namespace seneca
 				cout << " : " << "[" << student[i].mark << " ]";
 				cout << student[i].name << " " << student[i].surname << endl;
 			}
-			
-			
 			closeFile();
-
 			success = true;
 		}
 		else
@@ -75,23 +75,27 @@ namespace seneca
 	//Grouping the score into group from 100-0
 	//Start from index 9
 	//index 9 = 91 - 100 score
-	void groupingScore(StMark* student, int numOfRec, int* score)
+	void groupingScore(StMark* student, int numOfRec, int* score, int range)
 	{
 		int i;
-		int whole, remainder;
+		int whole, remain;
 
 		for (i = 0; i < numOfRec; i++)
 		{
 			whole = student[i].mark / 10;
-			remainder = student[i].mark % 10;
+			remain = student[i].mark % 10;
 
-			if (remainder)
+			if (whole == 10)
+			{
+				score[9]++;
+			}
+			else if (remain)
 			{
 				score[whole]++;
 			}
 			else
 			{
-				score[whole - 1]++;
+				score[whole - 1];
 			}
 		}
 	}
@@ -113,6 +117,8 @@ namespace seneca
 			}
 		}
 	}
+
+
 
 }
 
