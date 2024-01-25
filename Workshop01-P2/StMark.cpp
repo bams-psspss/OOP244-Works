@@ -81,6 +81,7 @@ namespace seneca
 			closeFile();
 		}
 
+		cout << "----------------------------------------" << endl;
 		return success;
 	}
 
