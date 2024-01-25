@@ -61,7 +61,12 @@ namespace seneca
 				{
 					cout << " ";
 				}
-				cout << ": " << "[" << student[i].mark << " ]";
+				cout << ": " << "[" << student[i].mark;
+				if (student[i].mark < 100)
+				{
+					cout << " ";
+				}
+				cout << "] ";
 				cout << student[i].name << " " << student[i].surname << endl;
 			}
 			closeFile();
@@ -91,9 +96,7 @@ namespace seneca
 			whole = student[i].mark / 10;
 
 			remain = student[i].mark % 10;
-			
-			//cout << whole << " " << remain << endl;
-			
+						
 			if (whole)
 			{
 				if (!remain)
