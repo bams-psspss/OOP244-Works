@@ -9,7 +9,8 @@ Date Completed:		Saturday 27 January, 2024
 #define SENECA_ASSESSMENT_H
 
 #define TITLE_LEN 60
-#define FMT_LEN 40
+
+#include <cstdio>
 
 namespace seneca
 {
