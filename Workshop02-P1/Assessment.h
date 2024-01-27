@@ -34,7 +34,6 @@ namespace seneca
 
 	//Skip the comma and then reads a cstring
 	//No longer than 60 chars from fptr into ADDRESS
-	//fmt = ",%60[^\n]\n"
 	bool read(char* cstr, FILE* fptr);
 
 

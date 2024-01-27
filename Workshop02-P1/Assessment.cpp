@@ -13,6 +13,9 @@ Date Completed:		Saturday 27 January, 2024
 using namespace std;
 namespace seneca
 {
+	//Reads one integer from the fptr file
+	//Into the value reference
+	//Return true if success
 	bool read(int& value, FILE* fptr)
 	{
 		bool valid = false;
@@ -31,6 +34,9 @@ namespace seneca
 		return valid;
 	}
 
+	//Read one Double from the fptr file
+	//Into value reference
+	//Return True if Sucess
 	bool read(double& value, FILE* fptr)
 	{
 		bool valid = false;
@@ -49,14 +55,11 @@ namespace seneca
 		return valid;
 	}
 
-
+	//Skip the comma and then reads a cstring
+	//No longer than 60 chars from fptr into ADDRESS
 	bool read(char* cstr, FILE* fptr)
 	{
 		bool valid = false;
-		char fmt[FMT_LEN + 1] = { 0 } ;
-
-		//Do this later
-		//fmt = ",%60[^\n]\n";
 
 		if (fptr != nullptr)
 		{
@@ -73,6 +76,10 @@ namespace seneca
 
 	}
 
+	//Try to read double value for the mark and a string for title
+	//Into a temporary local double variable and 60 chard long CString
+	//If success, allocate dynamic double and dynamic cString 
+	//And copy the the temp data to Assess
 	bool read(Assessment& assess, FILE* fptr)
 	{
 		bool valid = false;
@@ -100,6 +107,11 @@ namespace seneca
 		return valid;
 	}
 
+	//Receive reference of a dynamic Assessment.
+	//Delete dynamic assessment array
+	//Dynamic array loop, deletd by goinf through each memeber
+	//Delete dynamaic double and cString
+	//Then delete itself
 	void freeMem(Assessment*& aptr, int size)
 	{
 		int i;
@@ -118,6 +130,9 @@ namespace seneca
 		aptr = nullptr;
 	}
 
+	//Receives reference of Assessment pointer
+	//Read one integer -> number of records to read
+	//Allocate dynamic to aptr
 	int read(Assessment*& aptr, FILE* fptr)
 	{
 		int theNumber = 0;
@@ -129,7 +144,6 @@ namespace seneca
 		if (read(theNumber, fptr))
 		{
 			//Allocate a dynamic array of Assessments
-
 			aptr = new Assessment[theNumber];
 
 			for (i = 0; i < theNumber && fail; i++)
