@@ -135,7 +135,6 @@
   </ItemGroup>
   <ItemGroup>
     <Text Include="baddata.txt" />
-    <Text Include="correct_output.txt" />
     <Text Include="gooddata.txt" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

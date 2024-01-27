@@ -28,13 +28,10 @@
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <Text Include="baddata.txt">
-      <Filter>Resource Files</Filter>
-    </Text>
-    <Text Include="correct_output.txt">
-      <Filter>Resource Files</Filter>
-    </Text>
     <Text Include="gooddata.txt">
+      <Filter>Resource Files</Filter>
+    </Text>
+    <Text Include="baddata.txt">
       <Filter>Resource Files</Filter>
     </Text>
   </ItemGroup>
