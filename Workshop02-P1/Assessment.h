@@ -8,6 +8,7 @@ Date Completed:		Saturday 27 January, 2024
 #ifndef SENECA_ASSESSMENT_H
 #define SENECA_ASSESSMENT_H
 
+#include <cstdio>
 #define TITLE_LEN 60
 
 namespace seneca
