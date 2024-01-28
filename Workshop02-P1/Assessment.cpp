@@ -7,12 +7,11 @@ Date Completed:		Saturday 27 January, 2024
 
 #define _CRT_SECURE_NO_WARNINGS
 #include <iostream>
-#include <cstdio>
 #include <cstring>
 
 #include "Assessment.h"
-
 using namespace std;
+
 namespace seneca
 {
 	//Reads one integer from the fptr file
@@ -27,6 +26,10 @@ namespace seneca
 			if (fscanf(fptr, "%d", &value) == 1)
 			{
 				valid = true;
+			}
+			else
+			{
+				valid = false;
 			}
 		}
 		else
@@ -49,6 +52,10 @@ namespace seneca
 			{
 				valid = true;
 			}
+			else
+			{
+				valid = false;
+			}
 		}
 		else
 		{
@@ -68,6 +75,10 @@ namespace seneca
 			if(fscanf(fptr, ",%60[^\n]\n", cstr) == 1)
 			{
 				valid = true;
+			}
+			else
+			{
+				valid = false;
 			}
 		}
 		else
@@ -89,18 +100,23 @@ namespace seneca
 		char tempTitle[TITLE_LEN + 1] = {};
 
 
-
-		if (fscanf(fptr, "%lf,%60[^\n]\n", &tempMark, tempTitle) == 2)
+		if (fptr != nullptr)
 		{
-			assess.m_mark = new double;
-			assess.m_title = new char[TITLE_LEN + 1];
+			if (fscanf(fptr, "%lf,%60[^\n]\n", &tempMark, tempTitle) == 2)
+			{
+				assess.m_mark = new double;
+				assess.m_title = new char[strlen(tempTitle) + 1];
 
-			*assess.m_mark = tempMark;
-			strcpy(assess.m_title, tempTitle);
+				*assess.m_mark = tempMark;
+				strcpy(assess.m_title, tempTitle);
 
-			valid = true;
+				valid = true;
+			}
+			else
+			{
+				valid = false;
+			}
 		}
-
 		else
 		{
 			valid = false;
@@ -117,19 +133,32 @@ namespace seneca
 	void freeMem(Assessment*& aptr, int size)
 	{
 		int i;
-		int numRec;
 
-		numRec = size_t(aptr);
-
-		for (i = 0; i < numRec; i++)
+		if (aptr != nullptr && size > 0)
 		{
-			delete aptr[i].m_mark;
-			delete[] aptr[i].m_title;
 
+			for (i = 0; i < size; i++)
+			{
+				if (aptr[i].m_mark != nullptr)
+				{
+					delete aptr[i].m_mark;
+					aptr[i].m_mark = nullptr;
+				}
+
+				if (aptr[i].m_title != nullptr)
+				{
+					delete[] aptr[i].m_title;
+					aptr[i].m_title = nullptr;
+				}
+			}
+			delete[] aptr;
+			aptr = nullptr;
 		}
-		delete[] aptr;
+		else
+		{
+			//Nothing to delete, because it is already null!!!!!!!
+		}
 
-		aptr = nullptr;
 	}
 
 	//Receives reference of Assessment pointer
@@ -140,30 +169,32 @@ namespace seneca
 		int theNumber = 0;
 		int sizeOfArr = 0;
 		int i = 0;
-		bool fail = true;
 
 		//Read one integer
-		if (read(theNumber, fptr))
+		if (fptr != nullptr)
 		{
-			//Allocate a dynamic array of Assessments
-			aptr = new Assessment[theNumber];
-
-			for (i = 0; i < theNumber && fail; i++)
+			if (read(theNumber, fptr))
 			{
-				fail = read(aptr[i], fptr);
-				sizeOfArr++;
+				//Allocate a dynamic array of Assessments
+				aptr = new Assessment[theNumber];
+
+				for (i = 0; i < theNumber && read(aptr[i], fptr); i++)
+				{
+					sizeOfArr++;
+				}
+				if (i != theNumber)
+				{
+					freeMem(aptr, sizeOfArr);
+					sizeOfArr = 0;
+				}
 			}
-
-			if (i != theNumber)
+			else
 			{
-				freeMem(aptr, sizeOfArr);
 				sizeOfArr = 0;
-			}	
+			}
 		}
-		else
-		{
-			sizeOfArr = 0;
-		}
+
 		return sizeOfArr;
+
 	}
 }
