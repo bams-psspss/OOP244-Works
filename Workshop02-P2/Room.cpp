@@ -17,21 +17,18 @@ namespace seneca
 {
 	void set(Room& room, int numberOfGuests, const char* roomNumber)
 	{
-		//int i;
+		int i;
 		room.m_noOfGuests = numberOfGuests;
 
 		strcpy(room.m_roomNumber, roomNumber);
 
 		room.m_guests = new Guest[numberOfGuests];
 
-		/*for (i = 0; i < room.m_noOfGuests; i++)
+		for (i = 0; i < room.m_noOfGuests; i++)
 		{
 			room.m_guests[i].m_firstName = new char[MAX_NAME + 1];
-			//delete[] room.m_guests[i].m_firstName;
-
 			room.m_guests[i].m_lastName = new char[MAX_NAME + 1];
-			//delete[] room.m_guests[i].m_firstName;
-		}*/
+		}
 	
 	}
 
