@@ -40,7 +40,7 @@ namespace seneca
 		int i = 0;
 		if (room.m_noOfGuests)
 		{
-			cout << "Room Number: " << room.m_roomNumber << endl;
+			cout << "Room number: " << room.m_roomNumber << endl;
 
 			for (i = 0; i < room.m_noOfGuests; i++)
 			{
