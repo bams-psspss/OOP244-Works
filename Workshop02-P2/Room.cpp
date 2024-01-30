@@ -40,7 +40,7 @@ namespace seneca
 		int i = 0;
 		if (room.m_noOfGuests)
 		{
-			cout << "Room number: " << room.m_roomNumber << endl;
+			cout << "Room Number: " << room.m_roomNumber << endl;
 
 			for (i = 0; i < room.m_noOfGuests; i++)
 			{
@@ -82,7 +82,7 @@ namespace seneca
 		char inputLName[MAX_NAME + 1] = { 0 };
 		int age = 0;
 
-		cout << "Room Number: ";
+		cout << "Room number: ";
 		cin >> room.m_roomNumber;
 
 		cout << "Number of guest: ";
