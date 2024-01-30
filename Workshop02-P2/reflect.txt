@@ -1,0 +1,9 @@
+/*************************************************
+Name:			Pattarawan Saravaneeyawong
+Seneca Email:		psaravaneeyawong@myseneca.ca
+Student ID:		130618234
+Date Completed:		Tuesday 30 January 2024
+**************************************************/
+
+	In this workshop, I learn more about how to use 'new' or allocating dynamic memory. I am still a little confuse about it, but I did make it, by understanding it little by little. I am tho, still confuse about cout.width. I did cout.width(4), to get 4 spaces before the word vaccant, but it can not, So I try it with the next line is cout << ""; and it worked. Still a little confuse, but will be asking professor about it. 
+	While doing this workshop, I also question myself alot on how to choose which part should be another function. I try to minimize repeating the code and long code block, but I still hesitate about it.
