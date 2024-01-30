@@ -2,7 +2,7 @@
 Name:				Pattarawan Saravaneeyawong
 Seneca Email:		psaravaneeyawong@myseneca.ca
 Student ID:			130618234
-Date Completed:
+Date Completed:		Tuesday 30 January 2024
 **************************************************/
 
 #define _CRT_SECURE_NO_WARNINGS
@@ -29,8 +29,6 @@ namespace seneca
 		}
 		else
 		{
-
-			//Man Idk if I should check for each and delete it
 			guest.m_firstName = nullptr;
 			guest.m_lastName = nullptr;
 

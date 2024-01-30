@@ -2,7 +2,7 @@
 Name:				Pattarawan Saravaneeyawong
 Seneca Email:		psaravaneeyawong@myseneca.ca
 Student ID:			130618234
-Date Completed:
+Date Completed:		Tuesday 30 January 2024
 **************************************************/
 
 #ifndef SENECA_ROOM_H

@@ -2,7 +2,7 @@
 Name:				Pattarawan Saravaneeyawong
 Seneca Email:		psaravaneeyawong@myseneca.ca
 Student ID:			130618234
-Date Completed:
+Date Completed:		Tuesday 30 January 2024
 **************************************************/
 
 #ifndef SENECA_GUEST_H
@@ -40,12 +40,10 @@ namespace seneca
 	// vacates the guest by dallocating its memory.
 	void vacate(Guest& guest);
 
-
-
+	//Check the member in the Guest if its null or not
 	bool checkForNotNull(Guest guest);
-
-
-
+	
+	//Check if the guess is over 18 or not
 	bool legalAge(int age);
 
 }

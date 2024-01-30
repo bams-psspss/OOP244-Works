@@ -2,7 +2,7 @@
 Name:				Pattarawan Saravaneeyawong
 Seneca Email:		psaravaneeyawong@myseneca.ca
 Student ID:			130618234
-Date Completed:
+Date Completed:		Tuesday 30 January 2024
 **************************************************/
 
 #define _CRT_SECURE_NO_WARNINGS
@@ -38,7 +38,6 @@ namespace seneca
 	void print(const Room& room)
 	{
 		int i = 0;
-		int vacated = 1;
 		if (room.m_noOfGuests)
 		{
 			cout << "Room Number: " << room.m_roomNumber << endl;
@@ -76,15 +75,12 @@ namespace seneca
 		}
 	}
 
-
-	//Not done must receive in local and change to dynamic
 	void book(Room& room)
 	{
 		int i = 0;
 		char inputFName[MAX_NAME + 1] = { 0 };
 		char inputLName[MAX_NAME + 1] = { 0 };
 		int age = 0;
-		//char empty[MAX_NAME + 1] = { 0 };
 
 		cout << "Room Number: ";
 		cin >> room.m_roomNumber;

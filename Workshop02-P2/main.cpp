@@ -23,7 +23,7 @@ using namespace seneca;
 
 int main() 
 {
-    /*cout << "Testing Guest Functiosn:" << endl;
+    cout << "Testing Guest Functiosn:" << endl;
     Guest G;
     cout << "\nTesting bad setting\n---------------" << endl;
     set(G, nullptr, "ABC", 10);
@@ -47,7 +47,7 @@ int main()
     book(G);
     print(G);
     vacate(G);
-    print(G);*/
+    print(G);
 
     cout << "\nTesting Room Functions: " << endl;
     Room A;
