@@ -17,7 +17,7 @@ namespace seneca
 {
 	void set(Room& room, int numberOfGuests, const char* roomNumber)
 	{
-		int i;
+		//int i;
 		room.m_noOfGuests = numberOfGuests;
 
 		strcpy(room.m_roomNumber, roomNumber);
