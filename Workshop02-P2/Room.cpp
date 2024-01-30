@@ -85,7 +85,7 @@ namespace seneca
 		cout << "Room number: ";
 		cin >> room.m_roomNumber;
 
-		cout << "Number of guest: ";
+		cout << "Number of guests: ";
 		cin >> room.m_noOfGuests;
 
 		room.m_guests = new Guest[room.m_noOfGuests];
