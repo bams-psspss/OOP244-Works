@@ -35,9 +35,6 @@ namespace seneca
 	// vacates the room by dallocating all the memory used.
 	void vacate(Room& room);
 
-
 }
-
-
 
 #endif
