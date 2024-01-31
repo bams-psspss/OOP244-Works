@@ -26,8 +26,13 @@ namespace seneca
 
 		for (i = 0; i < room.m_noOfGuests; i++)
 		{
-			room.m_guests[i].m_firstName = new char[MAX_NAME + 1];
-			room.m_guests[i].m_lastName = new char[MAX_NAME + 1];
+			//room.m_guests[i].m_firstName = new char[MAX_NAME + 1];
+			room.m_guests[i].m_firstName = nullptr;
+
+			//room.m_guests[i].m_lastName = new char[MAX_NAME + 1];
+			room.m_guests[i].m_lastName = nullptr;
+
+			room.m_guests[i].m_adult = true;
 		}
 	
 	}
