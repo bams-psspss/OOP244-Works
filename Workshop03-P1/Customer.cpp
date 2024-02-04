@@ -56,11 +56,10 @@ namespace seneca
 
 	void Customer::display() const
 	{
-		int i;
 		if (!isEmpty()) 
 		{
 			cout.unsetf(ios::right);
-			cout.setf(ios::left) << cout.width(15);
+			cout.setf(ios::left); cout.width(15);
 			cout << "Customer ID:";
 			cout.setf(ios::right); cout.width(20);
 			cout << m_id << endl;

@@ -39,9 +39,5 @@ namespace seneca {
 		//Display car function
 		void display() const;
 	};
-
-
-
 }
-
-#endif SENECA_CAR_H
+#endif

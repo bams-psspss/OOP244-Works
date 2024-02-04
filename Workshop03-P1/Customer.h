@@ -42,4 +42,4 @@ namespace seneca
 
 }
 
-#endif  SENECA_CUSTOMER_H
+#endif

@@ -50,7 +50,6 @@ namespace seneca
 	void Car::set(const char plateNo[], const char* carMakeModel, 
 		const char* serviceDesc, double serviceCost)
 	{
-		int i;
 		deallocateMemory();
 		
 		if(plateNo[0] != '\0' && carMakeModel!= nullptr && carMakeModel[0] != '\0' &&
@@ -69,13 +68,11 @@ namespace seneca
 
 	void Car::display() const
 	{
-		int i;
-
 		if (!isEmpty()) {
 
-			cout.setf(ios::left) << cout.width(15);
+			cout.setf(ios::left); cout.width(15);
 			cout << "License Plate:";
-			cout.setf(ios::right) << cout.width(20);
+			cout.setf(ios::right);  cout.width(20);
 			cout << m_licencePlat;
 
 			cout << endl;
