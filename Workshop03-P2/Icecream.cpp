@@ -97,7 +97,7 @@ namespace seneca {
 
 		cout.setf(ios::left); 
 		cout.width(26);
-		cout << "Vanilla Waffer:";
+		cout << "Vanilla Wafer:";
 		cout.setf(ios::right);
 		cout.width(9);
 		cout.setf(ios::fixed);
@@ -140,7 +140,7 @@ namespace seneca {
 			break;
 
 		case 3:
-			cout << "Vanilla waffer cone?\n";
+			cout << "Vanilla wafer cone?\n";
 			break;
 
 		default:
