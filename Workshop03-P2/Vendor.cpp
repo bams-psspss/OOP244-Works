@@ -10,7 +10,6 @@ Date Completed:		Thursday 08 February 2024
 #include <iostream>
 #include <cstring> 
 
-//#include "Icecream.h"
 #include "Vendor.h"
 
 using namespace std;
@@ -78,9 +77,11 @@ namespace seneca {
 		cout << '-' << endl;
 
 		cout.fill(' ');
-		cout.setf(ios::left) << cout.width(26);
+		cout.setf(ios::left);
+		cout.width(26);
 		cout << "Price:";
-		cout.setf(ios::right);  cout.width(9);
+		cout.setf(ios::right);  
+		cout.width(9);
 		cout.setf(ios::fixed);
 		cout.precision(2);
 		cout << totalPrice << endl;
@@ -89,9 +90,11 @@ namespace seneca {
 
 		tax = totalPrice * (TAX / 100.0);
 
-		cout.setf(ios::left) << cout.width(26);
+		cout.setf(ios::left);
+		cout.width(26);
 		cout << "Tax:";
-		cout.setf(ios::right);  cout.width(9);
+		cout.setf(ios::right);  
+		cout.width(9);
 		cout.setf(ios::fixed);
 		cout.precision(2);
 		cout << tax << endl;
@@ -99,9 +102,11 @@ namespace seneca {
 
 
 		total = totalPrice + tax;
-		cout.setf(ios::left) << cout.width(26);
+		cout.setf(ios::left);
+		cout.width(26);
 		cout << "Total:";
-		cout.setf(ios::right);  cout.width(9);
+		cout.setf(ios::right);  
+		cout.width(9);
 		cout.setf(ios::fixed);
 		cout.precision(2);
 		cout << total << endl;

@@ -52,10 +52,13 @@ namespace seneca {
 
 	void Icecream::printOrder()
 	{
-		cout.setf(ios::left) << cout.width(25) << cout.fill(' ');
+		cout.setf(ios::left); 
+		cout.width(25); 
+		cout.fill(' ');
 		cout << "Order details:";
 
-		cout.setf(ios::right) << cout.width(10);
+		cout.setf(ios::right); 
+		cout.width(10);
 		cout << "Price" << endl;
 		cout.unsetf(ios::right);
 
@@ -65,10 +68,12 @@ namespace seneca {
 
 		cout.fill(' ');
 
-		
+		//here
 		cout << "Number of scoops, " << m_noOfScoop << " total:";
-		cout.setf(ios::left) << cout.width(26);
-		cout.setf(ios::right);  cout.width(9);
+		cout.setf(ios::left); 
+		cout.width(26);
+		cout.setf(ios::right); 
+		cout.width(9);
 		cout.setf(ios::fixed);
 		cout.precision(2);
 		cout << m_priceOfScoop << endl;
@@ -76,11 +81,13 @@ namespace seneca {
 
 		
 		cout << m_flavourChoice << " flavour:";
-		cout.setf(ios::left) << cout.width(26);
+		cout.setf(ios::left); 
+		cout.width(26);
 		
 		if (m_priceOfFlavour)
 		{
-			cout.setf(ios::right) << cout.width(17);
+			cout.setf(ios::right); 
+			cout.width(17);
 			cout.setf(ios::fixed);
 			cout.precision(2);
 			cout << m_priceOfFlavour;
@@ -88,17 +95,21 @@ namespace seneca {
 		}
 		cout << endl;
 
-		cout.setf(ios::left) << cout.width(26);
+		cout.setf(ios::left); 
+		cout.width(26);
 		cout << "Vanilla Waffer:";
-		cout.setf(ios::right) << cout.width(9);
+		cout.setf(ios::right);
+		cout.width(9);
 		cout.setf(ios::fixed);
 		cout.precision(2);
 		cout << m_priceOfWaffer << endl;
 		cout.unsetf(ios::right);
 
-		cout.setf(ios::left) << cout.width(26);
+		cout.setf(ios::left);
+		cout.width(26);
 		cout << "Price:";
-		cout.setf(ios::right) << cout.width(9);
+		cout.setf(ios::right);
+		cout.width(9);
 		cout.setf(ios::fixed);
 		cout.precision(2);
 		cout << m_total << endl;
@@ -111,14 +122,16 @@ namespace seneca {
 		switch (part){ 
 		case 1:
 			cout << "Select flavour:" << endl;
-			cout.width(16) << cout.fill('-');
+			cout.width(16);
+			cout.fill('-');
 			cout << "" << endl;
 			cout << "1: Chocolate\n";
 			cout << "2: Strawberry\n";
 			cout << "3: Mango\n";
 			cout << "4: Tutti fruit\n";
 			cout << "5: Almond crunch\n";
-			cout.width(16) << cout.fill('-');
+			cout.width(16);
+			cout.fill('-');
 			cout << "" << endl;			
 			break;
 
