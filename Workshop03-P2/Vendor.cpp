@@ -29,7 +29,7 @@ namespace seneca {
 	{
 		int i;
 		
-		cout << "Seneca Icecream Shop\n";
+		cout << "Seneca Icecream shop\n";
 		
 		cout << "          @" << endl;
 		cout << "        (' .)" << endl;
