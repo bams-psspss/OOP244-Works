@@ -104,7 +104,7 @@ namespace seneca {
 		total = totalPrice + tax;
 		cout.setf(ios::left);
 		cout.width(26);
-		cout << "Total:";
+		cout << "Total Price ($):";
 		cout.setf(ios::right);  
 		cout.width(9);
 		cout.setf(ios::fixed);
