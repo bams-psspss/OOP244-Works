@@ -169,7 +169,7 @@ namespace seneca {
 				}
 				else
 				{
-					cout << "Invalid value(" << min << "<=val<=" << max << ")" << endl;
+					cout << "Invlid value(" << min << "<=val<=" << max << ")" << endl;
 				
 				}
 			}
