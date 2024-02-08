@@ -1,9 +1,0 @@
-/*************************************************
-Name:			Pattarawan Saravaneeyawong
-Seneca Email:		psaravaneeyawong@myseneca.ca
-Student ID:		130618234
-Date Completed:		Thursday 08 February 2024
-**************************************************/
-
-In this workshop, it really give hard time on doing formatting. I do the formating for like 2 days, because I don't understand why when I use cout.width(20); cout.fill('-'); cout << ' '; the beginning if the line will be started of with the spacebar. I did try the code with onlinegdb, and it worked, but in VS it doesn't work! 
-The second thing I find it difficult for me in this workshop is that, I a still not good at designing the program and function. I hesitate to make new function because I am not sure if that part should be a function or not. And in the last part, the tax and total price, I try to do inline calculation, but it seems to be weird. I does not follow cout.setf(ios:fixed); cout.precision(2); something like this. I just print out the whole number.

@@ -80,12 +80,13 @@ namespace seneca {
 		cout.unsetf(ios::right);
 
 		
-		cout << m_flavourChoice << " flavour:";
-		cout.setf(ios::left); 
-		cout.width(26);
+		cout << m_flavourChoice << " flavour";
 		
 		if (m_priceOfFlavour)
 		{
+			cout << ":";
+			cout.setf(ios::left);
+			cout.width(26);
 			cout.setf(ios::right); 
 			cout.width(17);
 			cout.setf(ios::fixed);
