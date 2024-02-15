@@ -1,0 +1,7 @@
+/*************************************************
+Name:			Pattarawan Saravaneeyawong
+Seneca Email:		psaravaneeyawong@myseneca.ca
+Student ID:		130618234
+Date Completed:		Thursday 15 February 2024
+**************************************************/
+In this workshop I learn that the constructor can have many format, it could be with or without the argument. First I get like an error, which  I search online, and it was about the heap but not normal heap. It says like some where in my code have an error of using 'new' in wrong place. I thought it was in one of the function but when I walkthrough my code again the prblem was in the constructor. But I did fixed it!
