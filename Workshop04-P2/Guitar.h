@@ -47,7 +47,7 @@ namespace seneca{
       char m_model[MODEL_LEN + 1];
 
   public:
-      Guitar(const char* mod = "Startocaster");
+      Guitar(const char* mod = "Stratocaster");
       Guitar(GuitarStr strs[], int ns, const char* mod);
       ~Guitar();
 
