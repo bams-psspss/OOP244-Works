@@ -228,7 +228,7 @@ namespace seneca
 			cout << m_userName;
 			cout << " | ";
 
-			cout.width(9);
+			cout.width(8);
 			cout.fill(' ');
 			if (m_checking)
 			{
