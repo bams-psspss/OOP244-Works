@@ -257,7 +257,7 @@ namespace seneca
 		}
 		else
 		{
-			cout.width(7);
+			cout.width(8);
 			cout.fill('-');
 			cout << " " << "NOT OPEN" << endl;
 			cout.fill(' ');
