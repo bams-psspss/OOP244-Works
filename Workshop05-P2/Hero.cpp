@@ -51,7 +51,7 @@ namespace seneca
         int i;
 
         ostr << "Name: " << m_name << endl;
-        ostr << "List of available powers:" << endl;
+        ostr << "List of available powers: " << endl;
 
         for (i = 0; i < m_numOfPower; i++)
         {
