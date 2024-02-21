@@ -1,0 +1,7 @@
+/*************************************************
+Name:			Pattarawan Saravaneeyawong
+Seneca Email:		psaravaneeyawong@myseneca.ca
+Student ID:		130618234
+Date Completed:		Wednesday February 21 2024
+**************************************************/
+In this workshop and I am so confused about this helper function. In my understanding, helper function help the operators to do something but it have different type of variables in the argument. For the other operators like += tha it use directly I think I did pretty well in it. I did create temporary m_power to copy the old one to the temp and add new power to it, in order to resize the array. After I use the tempPower, I also delete it, to prevent the memory leak!   
