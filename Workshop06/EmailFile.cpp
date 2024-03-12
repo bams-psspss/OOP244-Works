@@ -129,38 +129,31 @@ namespace seneca
     void EmailFile::loadEmails()
     {
         bool valid = true;
-        int i;
+        int i = 0;
+        int count = 0;
 
-        if (m_filename)
+        if (m_filename != nullptr) 
         {
             delete[] m_emailLines;
+            m_emailLines = nullptr;
 
-            //Open the file!!!
+            m_emailLines = new Email[m_noOfEmails];
             ifstream file(m_filename);
-            if (!file.is_open())
-            {
-                //Have file name, but fail to open it.
-            }
-            else
-            {
-               setNoOfEmails();
 
-                m_emailLines = new Email[m_noOfEmails];
-
-                for (i = 0; i < m_noOfEmails && valid; i++) {
-                    if (!m_emailLines[i].load(file))
-                    {
-                        valid = false;
-                    }
+            for (i = 0; i < m_noOfEmails && valid; i++)
+            {
+                if (!m_emailLines[i].load(file)) 
+                {
+                    valid = false;
                 }
-
-                file.close();
-
+                if (valid)
+                {
+                    ++count;
+                }
             }
-        }
-        else
-        {
-            //Null Nothing happen
+
+            m_noOfEmails = count;
+            file.close();
         }
     }
 
@@ -178,8 +171,8 @@ namespace seneca
         else
         {
            setFilename(filename);
-            setNoOfEmails();
-            loadEmails();
+           setNoOfEmails();
+           loadEmails();
 
         }
     }
@@ -200,15 +193,15 @@ namespace seneca
 
     EmailFile::operator bool() const
     {
-        return m_filename != nullptr;
+        return (m_emailLines != nullptr && m_noOfEmails != 0 && m_filename != nullptr);
     }
 
     bool EmailFile::saveToFile(const char* filename) const
     {
         bool answer = false;
         ofstream file(filename);
-
         int i;
+
         if (!file.is_open())
         {
             cout << "Error: Could not open file: " << filename << endl;
@@ -218,11 +211,7 @@ namespace seneca
             for (i = 0; i < m_noOfEmails; i++)
             {
                 
-                file << m_emailLines[i].m_email << "," << m_emailLines[i].m_name << "," << m_emailLines[i].m_year;
-                if (i < m_noOfEmails - 1)
-                {
-                    file << endl;
-                }
+                file << m_emailLines[i].m_email << "," << m_emailLines[i].m_name << "," << m_emailLines[i].m_year << endl;
 
             }
             file.close();
@@ -301,7 +290,7 @@ namespace seneca
             }
             else
             {
-            
+
                 m_emailLines = nullptr;
                 m_filename = nullptr;
                 m_noOfEmails = 0;

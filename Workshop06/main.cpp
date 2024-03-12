@@ -12,6 +12,12 @@
 // Name            Date            Reason
 //
 ***********************************************************************/
+/*************************************************
+Name:				Pattarawan Saravaneeyawong
+Seneca Email:		psaravaneeyawong@myseneca.ca
+Student ID:			130618234
+Date Completed:     Tuesday 12 March 2024
+**************************************************/
 #include <iostream>
 #include <fstream>
 #include "EmailFile.h"
