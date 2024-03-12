@@ -128,7 +128,6 @@ namespace seneca
 
     void EmailFile::loadEmails()
     {
-        char buffer[BUFFER_SIZE]{};
         bool valid = true;
         int i;
 
