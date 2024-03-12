@@ -200,7 +200,7 @@ namespace seneca
 
     EmailFile::operator bool() const
     {
-        return m_filename != nullptr ? true : false;
+        return m_filename != nullptr;
     }
 
     bool EmailFile::saveToFile(const char* filename) const
@@ -234,48 +234,46 @@ namespace seneca
 
 
     void EmailFile::fileCat(const EmailFile& obj, const char* name)
-    {
-        EmailFile tmpEmailF;
-        int i, j;
+     {
+         EmailFile tmpEmailF;
+         int i, j;
 
-        if (m_filename != nullptr && obj.m_filename != nullptr && tmpEmailF.m_filename == nullptr)
-        {
+         if (m_filename != nullptr && obj.m_filename != nullptr && tmpEmailF.m_filename == nullptr)
+         {
 
-            tmpEmailF.m_noOfEmails = m_noOfEmails + obj.m_noOfEmails;
+             tmpEmailF.m_noOfEmails = m_noOfEmails + obj.m_noOfEmails;
 
-            tmpEmailF.m_filename = new char[strlen(m_filename) + 1];
-            strcpy(tmpEmailF.m_filename, m_filename);
+             tmpEmailF.m_filename = new char[strlen(m_filename) + 1];
+             strcpy(tmpEmailF.m_filename, m_filename);
 
-            tmpEmailF.m_emailLines = new Email[tmpEmailF.m_noOfEmails + 1];
-            for (i = 0; i < m_noOfEmails; ++i) 
-            {
-                tmpEmailF.m_emailLines[i] = m_emailLines[i];
-            }
+             tmpEmailF.m_emailLines = new Email[tmpEmailF.m_noOfEmails];
+             for (i = 0; i < m_noOfEmails; ++i)
+             {
+                 tmpEmailF.m_emailLines[i] = m_emailLines[i];
+             }
 
-            for (j = 0; j < obj.m_noOfEmails; ++j, ++i) 
-            {
-                tmpEmailF.m_emailLines[i] = obj.m_emailLines[j];
-            }
+             for (j = 0; j < obj.m_noOfEmails && i < tmpEmailF.m_noOfEmails; ++j, ++i)
+             {
+                 tmpEmailF.m_emailLines[i] = obj.m_emailLines[j];
+             }
+
+   /*          delete[] m_emailLines;
+             m_emailLines = new Email[m_noOfEmails];*/
+             *this = tmpEmailF;
+
+             if (name != nullptr)
+             {
+                 saveToFile(name);
+             }
 
 
-            delete[] m_emailLines;
-            m_emailLines = new Email[m_noOfEmails];
-            *this = tmpEmailF;
+         }
+         else
+         {
+             //exit silently;
+         }
 
-            if (name != nullptr)
-            {
-                saveToFile(name);
-            }
-
-
-        }
-        else
-        {
-            //exit silently;
-        }
-
-     }
-
+      }
 
 
 
@@ -285,7 +283,8 @@ namespace seneca
         int i;
         if (this != &emailFile)
         {
-            setEmpty();
+            delete[] m_emailLines;
+            delete[] m_filename;
 
             if (emailFile.m_emailLines != nullptr && emailFile.m_filename != nullptr && emailFile.m_noOfEmails != 0)
             {
@@ -299,6 +298,13 @@ namespace seneca
 
                 strcpy(m_filename, emailFile.m_filename);
                 m_noOfEmails = emailFile.m_noOfEmails;
+            }
+            else
+            {
+            
+                m_emailLines = nullptr;
+                m_filename = nullptr;
+                m_noOfEmails = 0;
             }
         }
 
