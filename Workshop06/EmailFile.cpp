@@ -177,18 +177,18 @@ namespace seneca
         }
         else
         {
-            setFilename(filename);
+           setFilename(filename);
             setNoOfEmails();
             loadEmails();
+
         }
     }
 
   EmailFile::EmailFile(const EmailFile& emailFile)
     {
+      setEmpty();
       *this = emailFile;
     }
-
-
 
 
 
@@ -233,7 +233,7 @@ namespace seneca
     }
 
 
-   /* void EmailFile::fileCat(const EmailFile& obj, const char* name)
+    void EmailFile::fileCat(const EmailFile& obj, const char* name)
     {
         EmailFile tmpEmailF;
         int i, j;
@@ -246,12 +246,14 @@ namespace seneca
             tmpEmailF.m_filename = new char[strlen(m_filename) + 1];
             strcpy(tmpEmailF.m_filename, m_filename);
 
-            tmpEmailF.m_emailLines = new Email[tmpEmailF.m_noOfEmails];
-            for (i = 0; i < m_noOfEmails; ++i) {
+            tmpEmailF.m_emailLines = new Email[tmpEmailF.m_noOfEmails + 1];
+            for (i = 0; i < m_noOfEmails; ++i) 
+            {
                 tmpEmailF.m_emailLines[i] = m_emailLines[i];
             }
 
-            for (j = 0; j < obj.m_noOfEmails; ++j, ++i) {
+            for (j = 0; j < obj.m_noOfEmails; ++j, ++i) 
+            {
                 tmpEmailF.m_emailLines[i] = obj.m_emailLines[j];
             }
 
@@ -272,51 +274,33 @@ namespace seneca
             //exit silently;
         }
 
-     }*/
+     }
 
-    void EmailFile::fileCat(const EmailFile& obj, const char* name) {
-        int i, j;
-        if (!(bool)*this || !(bool)obj) {
-            return;
-        }
 
-        int totalEmail = m_noOfEmails + obj.m_noOfEmails;
 
-        Email* combinedEmail = new Email[totalEmail];
 
-        for (i = 0; i < m_noOfEmails; ++i) {
-            combinedEmail[i] = m_emailLines[i];
-        }
-
-        for (j = 0; j < obj.m_noOfEmails; ++j, ++i) {
-            combinedEmail[i] = obj.m_emailLines[j];
-        }
-
-        delete[] m_emailLines;
-
-        m_noOfEmails = totalEmail;
-        m_emailLines = combinedEmail;
-
-        if (name != nullptr) {
-            setFilename(name);
-        }
-
-        saveToFile(m_filename);
-    }
+    
     EmailFile& EmailFile::operator=(const EmailFile& emailFile)
     {
         int i;
-        setEmpty();
-        m_emailLines = new Email[emailFile.m_noOfEmails];
-        m_filename = new char[strlen(emailFile.m_filename) + 1];
-
-        for (i = 0; i < emailFile.m_noOfEmails; i++)
+        if (this != &emailFile)
         {
-            m_emailLines[i] = emailFile.m_emailLines[i];
-        }
+            setEmpty();
 
-        strcpy(m_filename, emailFile.m_filename);
-        m_noOfEmails = emailFile.m_noOfEmails;
+            if (emailFile.m_emailLines != nullptr && emailFile.m_filename != nullptr && emailFile.m_noOfEmails != 0)
+            {
+                m_emailLines = new Email[emailFile.m_noOfEmails];
+                m_filename = new char[strlen(emailFile.m_filename) + 1];
+
+                for (i = 0; i < emailFile.m_noOfEmails; i++)
+                {
+                    m_emailLines[i] = emailFile.m_emailLines[i];
+                }
+
+                strcpy(m_filename, emailFile.m_filename);
+                m_noOfEmails = emailFile.m_noOfEmails;
+            }
+        }
 
         return *this;
     }
