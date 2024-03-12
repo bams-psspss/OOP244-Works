@@ -233,7 +233,7 @@ namespace seneca
     }
 
 
-    void EmailFile::fileCat(const EmailFile& obj, const char* name)
+   /* void EmailFile::fileCat(const EmailFile& obj, const char* name)
     {
         EmailFile tmpEmailF;
         int i, j;
@@ -247,8 +247,6 @@ namespace seneca
             strcpy(tmpEmailF.m_filename, m_filename);
 
             tmpEmailF.m_emailLines = new Email[tmpEmailF.m_noOfEmails];
-
-
             for (i = 0; i < m_noOfEmails; ++i) {
                 tmpEmailF.m_emailLines[i] = m_emailLines[i];
             }
@@ -274,8 +272,37 @@ namespace seneca
             //exit silently;
         }
 
-     }
+     }*/
 
+    void EmailFile::fileCat(const EmailFile& obj, const char* name) {
+        int i, j;
+        if (!(bool)*this || !(bool)obj) {
+            return;
+        }
+
+        int totalEmail = m_noOfEmails + obj.m_noOfEmails;
+
+        Email* combinedEmail = new Email[totalEmail];
+
+        for (i = 0; i < m_noOfEmails; ++i) {
+            combinedEmail[i] = m_emailLines[i];
+        }
+
+        for (j = 0; j < obj.m_noOfEmails; ++j, ++i) {
+            combinedEmail[i] = obj.m_emailLines[j];
+        }
+
+        delete[] m_emailLines;
+
+        m_noOfEmails = totalEmail;
+        m_emailLines = combinedEmail;
+
+        if (name != nullptr) {
+            setFilename(name);
+        }
+
+        saveToFile(m_filename);
+    }
     EmailFile& EmailFile::operator=(const EmailFile& emailFile)
     {
         int i;
