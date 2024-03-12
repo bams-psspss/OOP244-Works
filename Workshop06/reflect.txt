@@ -1,0 +1,7 @@
+/*************************************************
+Name:			Pattarawan Saravaneeyawong
+Seneca Email:		psaravaneeyawong@myseneca.ca
+Student ID:		130618234
+Date Completed:		Tuesday 12 March 2024
+**************************************************/
+After I did this workshop and did a some research about "friend function", I know it have some benefit like other class can enter the private variable from other class, but what really is the point? The variables have a private for some reason, and I think we should not use the "friend" function that often. I understand more about (this), I know it been long time you taught us, but I just truly the use of it today, and I thiknk it is very convenient. In the Filecat part, first when I copy from tmpEmailF to 'this' object, i use loop then I thought that I already make a function of operator= and i try to *this = tmpEmailF and it worked!
