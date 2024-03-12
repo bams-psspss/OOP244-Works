@@ -235,7 +235,6 @@ namespace seneca
 
     void EmailFile::fileCat(const EmailFile& obj, const char* name)
     {
-
         EmailFile tmpEmailF;
         int i, j;
 
@@ -249,15 +248,15 @@ namespace seneca
 
             tmpEmailF.m_emailLines = new Email[tmpEmailF.m_noOfEmails];
 
-            for (i = 0; i < m_noOfEmails; i++)
+           for (i = 0; i < m_noOfEmails; i++)
             {
                 tmpEmailF.m_emailLines[i] = m_emailLines[i];
             }
-            for (j = 0; j < obj.m_noOfEmails; j++)
+            for (j = 0; j < obj.m_noOfEmails && i < tmpEmailF.m_noOfEmails; j++, i++)
             {
                 tmpEmailF.m_emailLines[i] = obj.m_emailLines[j];
-                i++;
             }
+
             delete[] m_emailLines;
             m_emailLines = new Email[m_noOfEmails];
             *this = tmpEmailF;
@@ -266,6 +265,7 @@ namespace seneca
             {
                 saveToFile(name);
             }
+
 
         }
         else
