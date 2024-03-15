@@ -21,7 +21,7 @@ who gave it to you, or from what source you acquired it.
 
 namespace seneca {
 	class Menu {
-		char* m_text;
+		char* m_text{nullptr};
 		int m_menuNum;
 		int m_indent;
 
