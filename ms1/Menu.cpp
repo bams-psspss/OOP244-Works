@@ -30,7 +30,7 @@ namespace seneca {
 		size_t i;
 
 		delete[] m_text;
-
+		m_text = nullptr;
 		m_text = new char[strlen(menuContent) + 1];
 
 		strcpy(m_text, menuContent);
