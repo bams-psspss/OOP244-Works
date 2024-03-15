@@ -36,7 +36,7 @@ namespace seneca {
 		m_indent = numberOfTabs;
 		m_menuNum = 0;
 
-		for (i = 0; i < strlen(menuContent) + 1; i++)
+		for (i = 0; i < (strlen(menuContent) + 1); i++)
 		{
 			if (menuContent[i] == '\n')
 			{
@@ -62,7 +62,7 @@ namespace seneca {
 		for (i = 0; i < m_menuNum + 1; i++)
 		{
 			notNewline = true;
-			for (j; j < strlen(m_text) + 1 && notNewline; j++)
+			for (j; j < (strlen(m_text) + 1) && notNewline; j++)
 			{
 
 				if (m_text[j] == '\n') 
