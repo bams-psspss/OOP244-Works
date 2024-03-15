@@ -59,7 +59,7 @@ namespace seneca {
 		bool notNewline = true;
 
 		//No indent infront
-		for (i = 0; i < (m_menuNum + 1); i++)
+		for (i = 0; i < ((size_t)m_menuNum + 1); i++)
 		{
 			notNewline = true;
 			for (j = j; j < (strlen(m_text) + 1) && notNewline; j++)
