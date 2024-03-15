@@ -55,14 +55,14 @@ namespace seneca {
 	void Menu::printMenu()
 	{
 		size_t i;
-		int j = 0;
+		size_t j = 0;
 		bool notNewline = true;
 
 		//No indent infront
-		for (i = 0; i < m_menuNum + 1; i++)
+		for (i = 0; i < (m_menuNum + 1); i++)
 		{
 			notNewline = true;
-			for (j; j < (strlen(m_text) + 1) && notNewline; j++)
+			for (j = j; j < (strlen(m_text) + 1) && notNewline; j++)
 			{
 
 				if (m_text[j] == '\n') 
