@@ -27,7 +27,7 @@ using namespace std;
 namespace seneca {
 	Menu::Menu(const char* menuContent, int numberOfTabs)
 	{
-		int i;
+		size_t i;
 
 		delete[] m_text;
 		m_text = new char[strlen(menuContent) + 1];
@@ -54,7 +54,7 @@ namespace seneca {
 
 	void Menu::printMenu()
 	{
-		int i;
+		size_t i;
 		int j = 0;
 		bool notNewline = true;
 
