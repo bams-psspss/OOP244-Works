@@ -24,12 +24,12 @@ using namespace std;
 
 namespace seneca {
 
-    std::ostream& seneca::operator<<(std::ostream& ostr, const IOAble& ioable)
+    std::ostream& operator<<(std::ostream& ostr, const IOAble& ioable)
     {
         return ioable.write(ostr);
     }
 
-    std::istream& seneca::operator>>(std::istream& istr, IOAble& ioable)
+    std::istream& operator>>(std::istream& istr, IOAble& ioable)
     {
         return ioable.read(istr);
     }
