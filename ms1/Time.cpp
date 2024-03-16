@@ -3,7 +3,7 @@ Final Project Milestone 1
 Module: Time
 Filename: Time.cpp
 Version 1.0
-Author   Pattarwan Saravaneeyawong
+Author   Pattarawan Saravaneeyawong
 Revision History
 -----------------------------------------------------------
 Date      Reason
@@ -17,110 +17,102 @@ Write exactly which part of the code is given to you as help and
 who gave it to you, or from what source you acquired it.
 -----------------------------------------------------------*/
 
-#define _CRT_SECURE_NO_WARNINGS
 #include <iostream>
 #include "Time.h"
 
 using namespace std;
+
 namespace seneca {
+
 	Time& Time::reset()
 	{
-		m_totalMin = U.getTime();
+		m_totalMins = U.getTime();
+
 		return *this;
 	}
 
 	Time::Time(unsigned int min)
 	{
-		m_totalMin = min;
-		m_hours = 0;
-		m_mins = 0;
+		m_totalMins = min;
 	}
 
-	std::ostream& Time::write(std::ostream& ostr) const 
+	std::ostream& Time::write(std::ostream& ostr) const
 	{
-		int hours = m_totalMin / 60;
-		int mins = m_totalMin - (hours * 60);
+		int hours = 0;
+		int minutes = 0;
 
-		//try setfill and setwidth but fail
-		if (hours < 10) 
+		if (m_totalMins >= 0)
 		{
-			ostr << "0";
-		}
-		ostr << hours << ":";
-		if (mins < 10) {
-			ostr << "0" << mins;
-		}
-		else {
-			ostr << mins;
-		}
-
-
-		return ostr;
-
-	}
-
-	std::istream& Time::read(char delimeter, std::istream& istr) 
-	{
-
-		istr >> m_hours;
-		if (istr.fail()) 
-		{
-			istr.setstate(ios::failbit);
-		}
-		//the peek check for the last thing without entering anything
-		//I google it
-		//But I wanna know what is inside, but there is no source for it.
-		if (istr.peek() != delimeter)
-		{
-			istr.setstate(ios::failbit);
+			hours = m_totalMins / 60;
+			minutes = m_totalMins % 60;
 		}
 		else
 		{
-			istr.ignore();
-			istr >> m_mins;
+			hours = (m_totalMins + 1440) / 60;
+			minutes = (m_totalMins + 1440) % 60;
+
 		}
 
-		m_totalMin = (m_hours * 60) + m_mins;
+		ostr << hours << ":";
+		if (minutes < 10) {
+			ostr << "0" << minutes;
+		}
+		else {
+			ostr << minutes;
+		}
 
+		return ostr;
+	}
+
+	std::istream& Time::read(char delimiter, std::istream& istr)
+	{
+		int hours = 0;
+		int minutes = 0;
+		char theColon = '\0';
+
+		U.getTime();
+		if (theColon == delimiter)
+		{
+			istr.ignore();
+		}
+		else
+		{
+
+			istr.setstate(ios::failbit);
+		}
+		
 		return istr;
 	}
 
+
 	Time::operator unsigned int() const
 	{
-		return m_totalMin;
+		return m_totalMins;
 	}
 
 	Time& Time::operator*=(int val)
 	{
-		m_totalMin *= val;
+		m_totalMins *= val;
 
 		return *this;
 	}
 
 	Time& Time::operator-=(const Time& D)
 	{
-		m_totalMin -= D.m_totalMin;
-		if (m_totalMin <= -1)
-		{
-			m_totalMin += 1440;
-		}
+		m_totalMins -= D;
 
 		return *this;
 	}
 
 	Time Time::operator-(const Time& T) const
 	{
-		Time diffTime;
-
-		diffTime.m_totalMin = m_totalMin - T.m_totalMin;
-
-		if (diffTime.m_totalMin <= -1)
-		{
-			diffTime.m_totalMin += 1440;
-		}
+		int diffTime;
+		diffTime = m_totalMins - T;
 
 		return diffTime;
 	}
+
+
 
 	std::ostream& operator<<(std::ostream& ostr, const Time& time)
 	{
@@ -129,7 +121,7 @@ namespace seneca {
 
 	std::istream& operator>>(std::istream& istr, Time& time)
 	{
-		return time.read(':', istr);
+		return time.read(':',istr);
 	}
 
 }

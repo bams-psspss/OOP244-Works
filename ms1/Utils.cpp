@@ -31,7 +31,7 @@ namespace seneca {
          mins = lt.tm_hour * 60 + lt.tm_min;
       }
       return mins;
-   }
+   } 
    void Utils::setDebugTime(int hour, int min) {
       seneca::debug = true;
       m_testMins = hour * 60 + min;

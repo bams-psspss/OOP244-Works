@@ -53,6 +53,7 @@ namespace seneca{
 
        if (nf > 0 && mod != nullptr && mod[0] != '\0') {
            m_numFoods = nf;
+
            m_model = new char[strlen(mod) + 1];
            strcpy(m_model, mod);
        }

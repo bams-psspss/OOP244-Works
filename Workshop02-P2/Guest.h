@@ -47,6 +47,4 @@ namespace seneca
 	bool legalAge(int age);
 
 }
-
-
 #endif

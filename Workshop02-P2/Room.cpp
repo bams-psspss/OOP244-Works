@@ -103,14 +103,16 @@ namespace seneca
 			cout << "Age: ";
 			cin >> age;
 
-			room.m_guests[i].m_firstName = new char[strlen(inputFName) + 1];
-			strcpy(room.m_guests[i].m_firstName, inputFName);
+			book(room.m_guests[i]);
+
+			//room.m_guests[i].m_firstName = new char[strlen(inputFName) + 1];
+			//strcpy(room.m_guests[i].m_firstName, inputFName);
 
 
-			room.m_guests[i].m_lastName = new char[strlen(inputLName) + 1];
-			strcpy(room.m_guests[i].m_lastName, inputLName);
+			//room.m_guests[i].m_lastName = new char[strlen(inputLName) + 1];
+			//strcpy(room.m_guests[i].m_lastName, inputLName);
 
-			room.m_guests[i].m_adult = legalAge(age);
+			//room.m_guests[i].m_adult = legalAge(age);
 
 		}
 
