@@ -24,6 +24,7 @@ namespace seneca {
 	SavingsAccount::SavingsAccount(const char* name, Date openDate, DepositInfo depInfo, double balance, double interest, Date interestDate) : BankAccount(name, openDate, depInfo, balance), m_interest(interest), m_interestDate(interestDate)
 	{
 	}
+
 	void SavingsAccount::applyInterest(Date& dt)
 	{
 		double tmpBalance = 0;
@@ -47,6 +48,8 @@ namespace seneca {
 	
 		cout << m_interestDate << " => ";
 		dt.write(cout);
+
+		m_interestDate = dt;
 
 		cout << endl;
 	}
