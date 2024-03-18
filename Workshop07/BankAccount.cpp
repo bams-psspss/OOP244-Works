@@ -8,6 +8,7 @@
 ***********************************************************************/
 #define _CRT_SECURE_NO_WARNINGS
 #include <iostream>
+#include <cstring>
 #include "BankAccount.h"
 
 using namespace std;
@@ -29,7 +30,7 @@ namespace seneca {
 	}
 	BankAccount::BankAccount(const char* name, Date openDate, DepositInfo depInfo, double balance)
 	{
-		strcpy(m_name, name);
+		strncpy(m_name, name, MAX_NAME);
 		m_openDate = openDate;
 		m_depInfo = depInfo;
 		m_balance = balance;
