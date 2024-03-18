@@ -1,0 +1,8 @@
+/*************************************************
+Name:			Pattarawan Saravaneeyawong
+Seneca Email:		psaravaneeyawong@myseneca.ca
+Student ID:		130618234
+Date Completed:		17 / 03 / 2024
+**************************************************/
+
+In this workshop, I am not sure if what I did is correct, but it worked and that's scares me. In the part where I use 'in.getline(m_name, MAX_NAME, '\n')', the first input is fine, but I use that to inpout the second line it just gave me null terminator. I suspect that it did not store the name correctly or there might be an input buffer, so I use in.ignore only after I use the getline, but then it did not work. So i tried to put in.ignore every after the inputit takes like in C where there is sacnf, better to flush it right away, and it worked! I am still a little confuse that if I take an input as the number, after the number is there an input buffer still? Because I thought that the input buffer can only be exist whren you enter the character. 
