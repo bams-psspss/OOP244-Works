@@ -30,7 +30,6 @@ namespace seneca {
 		size_t i;
 
 		delete[] m_text;
-		m_text = nullptr;
 		m_text = new char[strlen(menuContent) + 1];
 
 		strcpy(m_text, menuContent);
@@ -53,28 +52,20 @@ namespace seneca {
 		m_text = nullptr;
 	}
 
-	//The indention is the problem
 	void Menu::printMenu()
 	{
-		size_t i;
+		int i;
 		size_t j = 0;
 		bool notNewline = true;
-		int indent = m_indent * 3;
 
 		//No indent infront
-		if (m_indent != 0)
-		{
-			cout << " ";
-			cout.width(m_indent * 3);
-			cout.fill(' ');
-		}
-		for (i = 0; i < ((size_t)m_menuNum + 1); i++)
+		for (i = 0; i < (m_menuNum + 1); i++)
 		{
 			notNewline = true;
 			for (j = j; j < (strlen(m_text) + 1) && notNewline; j++)
 			{
 
-				if (m_text[j] == '\n') 
+				if (m_text[j] == '\n')
 				{
 					notNewline = false;
 
@@ -90,25 +81,22 @@ namespace seneca {
 			if (m_indent != 0 && m_text[j - 1] == '\n')
 			{
 				cout << " ";
-				cout.width(indent);
+				cout.width(m_indent);
 				cout.fill(' ');
-				
+
 			}
 		}
-
-
 		if (m_indent != 0)
 		{
 			cout << " ";
-			cout.width(indent);
+			cout.width(m_indent);
 			cout.fill(' ');
 		}
 		cout << "0- Exit" << endl;
-
 		if (m_indent != 0)
 		{
 			cout << " ";
-			cout.width(indent);
+			cout.width(m_indent);
 			cout.fill(' ');
 		}
 		cout << "> ";
@@ -120,7 +108,7 @@ namespace seneca {
 		bool valid = true;
 
 		printMenu();
-		
+
 		do {
 			cin >> usrSelection;
 
@@ -137,7 +125,7 @@ namespace seneca {
 				valid = false;
 				cout << "Invalid value enterd, retry[0 <= value <= " << m_menuNum << "]: ";
 			}
-			else if (cin.peek() != '\n') 
+			else if (cin.peek() != '\n')
 			{
 				cin.clear();
 				cin.ignore(1000, '\n');

@@ -33,7 +33,7 @@ namespace seneca {
 		Menu(const Menu&) = delete;
 
 		void printMenu();
-		
+
 		int& operator>> (int& Selection);
 	};
 
