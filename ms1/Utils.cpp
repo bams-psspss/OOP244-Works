@@ -37,4 +37,34 @@ namespace seneca {
       m_testMins = hour * 60 + min;
    }
    
+   int Utils::getInt()const {
+      int val{};
+      char newline{};
+      bool done = false;
+      while (!done) {
+         cin >> val;
+         newline = cin.get();
+         if (cin.fail()) {
+            cout << "Bad integer value, try again: ";
+            cin.clear();
+            cin.ignore(10000, '\n');
+         }
+         else if (newline != '\n') {
+            cout << "Only enter an integer, try again: ";
+            cin.ignore(10000, '\n');
+         }
+         else{
+            done = true;
+         }
+      }
+      return val;
+   }
+   int Utils::getInt(int min, int max)const {
+      int val{};
+      do {
+         val = getInt();
+      } while ((val < min || val > max) 
+         && cout << "Invalid value enterd, retry[" << min << " <= value <= " << max << "]: ");
+      return val;
+   }
 }

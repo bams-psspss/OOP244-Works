@@ -32,41 +32,26 @@ namespace seneca {
 	Time::Time(unsigned int min)
 	{
 		m_totalMin = min;
-		m_hours = 0;
-		m_mins = 0;
+
 	}
 
 	std::ostream& Time::write(std::ostream& ostr) const 
 	{
-		int hours = m_totalMin / 60;
-		int mins = m_totalMin - (hours * 60);
-
 		//try setfill and setwidth but fail
-		if (hours < 10) 
-		{
-			ostr << "0";
-		}
-		ostr << hours << ":";
-		if (mins < 10) {
-			ostr << "0" << mins;
-		}
-		else {
-			ostr << mins;
-		}
-
-
+		ostr.fill('0');
+		ostr.width(2);
+		ostr << (m_totalMin / 60) << ":";
+		ostr.fill('0');
+		ostr.width(2);
+		ostr << m_totalMin%60;
+		ostr.fill(' ');
 		return ostr;
-
 	}
 
 	std::istream& Time::read(char delimeter, std::istream& istr) 
 	{
-
-		istr >> m_hours;
-		if (istr.fail()) 
-		{
-			istr.setstate(ios::failbit);
-		}
+		int hours{}, mins{};
+		istr >> hours;
 		//the peek check for the last thing without entering anything
 		//I google it
 		//But I wanna know what is inside, but there is no source for it.
@@ -77,10 +62,10 @@ namespace seneca {
 		else
 		{
 			istr.ignore();
-			istr >> m_mins;
+			istr >> mins;
 		}
 
-		m_totalMin = (m_hours * 60) + m_mins;
+		m_totalMin = (hours * 60) + mins;
 
 		return istr;
 	}

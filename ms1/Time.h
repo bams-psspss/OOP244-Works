@@ -21,11 +21,10 @@ who gave it to you, or from what source you acquired it.
 #include <iostream>
 #include "Utils.h"
 
+
 namespace seneca {
 	class Time {
-		int m_totalMin;
-		int m_hours;
-		int m_mins;
+		int m_totalMin{};
 
 	public:
 		Time& reset();

@@ -21,18 +21,18 @@ who gave it to you, or from what source you acquired it.
 
 namespace seneca {
 	class Menu {
-		char* m_text;
-		int m_menuNum;
-		int m_indent;
-
+		char* m_text = nullptr;
+		int m_menuNum{};
+		int m_indent{};
+		void printIndent()const;
 	public:
 		Menu(const char* menuContent, int numberOfTabs = 0);
-		~Menu();
+		virtual ~Menu();
 
 		//Cannot copy or assign to other Menu object
 		Menu(const Menu&) = delete;
 
-		void printMenu();
+		void printMenu()const;
 
 		int& operator>> (int& Selection);
 	};

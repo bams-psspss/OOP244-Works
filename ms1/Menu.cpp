@@ -21,22 +21,27 @@ who gave it to you, or from what source you acquired it.
 #include <iostream>
 #include <cstring>
 #include "Menu.h"
+#include "Utils.h"
 
 using namespace std;
 
 namespace seneca {
+	void Menu::printIndent() const
+	{
+		for (int i = 0; i < m_indent; i++) {
+			cout << "   ";
+		}
+	}
 	Menu::Menu(const char* menuContent, int numberOfTabs)
 	{
-		size_t i;
-
-		delete[] m_text;
+		size_t i{};
 		m_text = new char[strlen(menuContent) + 1];
 
 		strcpy(m_text, menuContent);
 		m_indent = numberOfTabs;
 		m_menuNum = 0;
 
-		for (i = 0; i < (strlen(menuContent) + 1); i++)
+		for (i = 0; menuContent[i] ; i++)
 		{
 			if (menuContent[i] == '\n')
 			{
@@ -49,97 +54,27 @@ namespace seneca {
 	Menu::~Menu()
 	{
 		delete[] m_text;
-		m_text = nullptr;
 	}
 
-	void Menu::printMenu()
+	void Menu::printMenu()const
 	{
-		int i;
-		size_t j = 0;
-		bool notNewline = true;
-
-		//No indent infront
-		for (i = 0; i < (m_menuNum + 1); i++)
-		{
-			notNewline = true;
-			for (j = j; j < (strlen(m_text) + 1) && notNewline; j++)
-			{
-
-				if (m_text[j] == '\n')
-				{
-					notNewline = false;
-
-				}
-				else
-				{
-					cout << m_text[j];
-
-				}
-
-			}
-			cout << endl;
-			if (m_indent != 0 && m_text[j - 1] == '\n')
-			{
-				cout << " ";
-				cout.width(m_indent);
-				cout.fill(' ');
-
-			}
+		int i{};
+		printIndent();
+		for (i = 0; m_text[i]; i++) {
+			cout<< m_text[i];
+			if (m_text[i] == '\n') printIndent();
 		}
-		if (m_indent != 0)
-		{
-			cout << " ";
-			cout.width(m_indent);
-			cout.fill(' ');
-		}
+		cout << endl;
+		printIndent();
 		cout << "0- Exit" << endl;
-		if (m_indent != 0)
-		{
-			cout << " ";
-			cout.width(m_indent);
-			cout.fill(' ');
-		}
+		printIndent();
 		cout << "> ";
 
 	}
 	int& Menu::operator>>(int& Selection)
 	{
-		int usrSelection = 0;
-		bool valid = true;
-
 		printMenu();
-
-		do {
-			cin >> usrSelection;
-
-			if (cin.fail()) {
-				cin.clear();
-				cin.ignore(1000, '\n');
-				valid = false;
-				cout << "Bad integer value, try again: ";
-			}
-			else if (usrSelection < 0 || usrSelection > m_menuNum)
-			{
-				cin.clear();
-				cin.ignore(1000, '\n');
-				valid = false;
-				cout << "Invalid value enterd, retry[0 <= value <= " << m_menuNum << "]: ";
-			}
-			else if (cin.peek() != '\n')
-			{
-				cin.clear();
-				cin.ignore(1000, '\n');
-				valid = false;
-				cout << "Only enter an integer, try again: ";
-			}
-			else
-			{
-				valid = true;
-			}
-
-		} while (!valid);
-
-		Selection = usrSelection;
+		Selection = U.getInt(0, m_menuNum);
 		return Selection;
 	}
 }

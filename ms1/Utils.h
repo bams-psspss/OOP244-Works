@@ -41,7 +41,8 @@ namespace seneca {
       /// <returns>the current time in minutes</returns>
       int getTime(); // returns the time of day in minutes
 
-     
+      int getInt() const;
+      int getInt(int min, int max)const;
    };
 
    /// <summary>
