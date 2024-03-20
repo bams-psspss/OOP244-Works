@@ -1,0 +1,15 @@
+/*************************************************
+Name:			Pattarawan Saravaneeyawong
+Seneca Email:		psaravaneeyawong@myseneca.ca
+Student ID:		130618234
+Date Completed:		20 / 03 / 2024
+**************************************************/
+In this workshop I learn how to implement the virtual and PURE VIRTUAL. I find it so convenient to use this to inheritate the class. I like this because we can update it in future and add other features to out program.
+
+Update Reflect MS 1:
+After I have meeting with Prof. Fardad to fix my MS 1, first the problem was there is an undefined or something to do with memory. This happen because in the constructor I delete[] m_text which I suppose not to delete something in the constructor. He explain that when we create something we no need to delete it. And in the deconstructor, when I nned to deallocate, after we delete[]it we no need to set it to nullptr, because it already destroy the object.
+	Second the cin.peek(), this function let us PEEK the next value without receiving or touch anything, which is convenient for checking the next value to see if there is newline or not. 
+	Third, the strcpy or cstring, I just know that we include CRT_WARNING thingy because I was using the cstring library, which is not bad to use but it just not ok. I just found out that we, in class, write all the Utis and are suppose to use that. I thought we were not suppose to use that!
+	Fourth, the way of doing logic in code, I found it the code must be short and simple. I did it wayyy too long and complicated which it could be done in just like 3 lines instead of a bunch. 
+	Fifth, whenever the codeblock is dupolicated or not direclty related to the function, we must get that code block and make them into another function for a better life. I forgot about this, I know i learn iun IPC144, but I completely forgot about it.
+	
