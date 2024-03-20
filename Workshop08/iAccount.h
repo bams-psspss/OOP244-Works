@@ -26,7 +26,7 @@ namespace seneca {
 		virtual ~iAccount() {};
 	};
 
-	iAccount* CreateAccount(const char*, double);
+	iAccount* CreateAccount(const char* str, double balance);
 
 }
 
