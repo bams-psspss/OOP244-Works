@@ -5,7 +5,7 @@
 // File: ChequingAccount.cpp
 // Version 1.0
 // Date: 19 March 2024
-// Author: Pattarawan Saravaneeyawong
+// Author: Pattarawan Saravaneeyawong   
 // Description
 // This file implements the ChequingAccount class
 // -----------------------------------------------------------

@@ -4,7 +4,7 @@
 // File: ChequingAccount.h
 // Version 1.0
 // Date: 19 March 2024
-// Author: Pattarawan Saravaneeyawong
+// Author: Pattarawan Saravaneeyawong      
 // Description
 // This file defines the Account class
 // -----------------------------------------------------------

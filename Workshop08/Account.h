@@ -2,9 +2,9 @@
 // Workshop # 8, Virtual Functions and Abstract Base Classes
 //
 // File: Account.h
-// Version 1.0
-// Date:	19 March 2024
-// Author: Pattarawan Saravaneeyawong
+// Version 1.0 
+// Date:	19 March 2024 
+// Author: Pattarawan Saravaneeyawong   
 // Description
 // This file defines the Account class
 // -----------------------------------------------------------

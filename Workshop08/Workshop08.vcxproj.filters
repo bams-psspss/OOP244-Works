@@ -24,10 +24,10 @@
     <ClCompile Include="SavingsAccount.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Allocator.cpp">
+    <ClCompile Include="main.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="main.cpp">
+    <ClCompile Include="allocator.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
