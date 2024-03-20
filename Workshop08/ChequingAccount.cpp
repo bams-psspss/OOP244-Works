@@ -18,10 +18,10 @@
 using namespace std;
 
 namespace seneca {
-	ChequingAccount::ChequingAccount(double initialBalance, double transFee, double monthFee) : Account(initialBalance)
+	ChequingAccount::ChequingAccount(double balance, double transactionFee, double monthlyFee) : Account(balance)
 	{
-		transFee > 0 ? m_transFee = transFee : m_transFee = 0.0;
-		monthFee > 0 ? m_monthlyFee = monthFee : m_monthlyFee = 0.0;
+		transactionFee > 0 ? m_transFee = transactionFee : m_transFee = 0.0;
+		monthlyFee > 0 ? m_monthlyFee = monthlyFee : m_monthlyFee = 0.0;
 	}
 
 	bool ChequingAccount::credit(double value)

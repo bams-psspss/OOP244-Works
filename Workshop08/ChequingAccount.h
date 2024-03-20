@@ -22,7 +22,7 @@ namespace seneca {
 		double m_monthlyFee{};
 
 	public:
-		ChequingAccount(double initialBalance, double transFee, double monthFee);
+		ChequingAccount(double balance, double transactionFee, double monthlyFee);
 
 		bool credit(double value);
 		bool debit(double value);
