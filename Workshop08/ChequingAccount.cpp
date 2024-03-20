@@ -56,7 +56,7 @@ namespace seneca {
 
 	void ChequingAccount::display(std::ostream& out) const
 	{
-		out << "Account Type: Chequing" << endl;
+		out << "Account type: Chequing" << endl;
 
 		out.setf(ios::fixed);
 		out.precision(2);
