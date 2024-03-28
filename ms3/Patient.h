@@ -36,7 +36,6 @@ namespace seneca {
 	public:
 		Patient(int ticketNumber);
 		Patient(const Patient& patient);
-
 		Patient& operator=(const Patient& patient);
 		
 		~Patient();
@@ -60,10 +59,5 @@ namespace seneca {
 
 
 }
-
-
-
-
-
 
 #endif // !SENECA_PATIENT_H

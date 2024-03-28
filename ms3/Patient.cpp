@@ -160,7 +160,6 @@ namespace seneca {
 
 
 
-			//Everything is 0
 			if (!m_ticket.read(istr)) {
 
 				istr.setstate(std::ios::failbit);
