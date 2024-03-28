@@ -26,18 +26,14 @@ namespace seneca {
 	Patient::Patient(int ticketNumber) : m_ticket(ticketNumber) {}
 
 	Patient::Patient(const Patient& patient) : m_OHIP(patient.m_OHIP), m_ticket(patient.m_ticket) {
-		m_patientName = new char[U.strlen(patient.m_patientName) + 1];
-		U.strcpy(m_patientName, patient.m_patientName, maxNameLen);
+		U.aloCopy(m_patientName, patient.m_patientName, maxNameLen);
 	}
 
 	Patient& Patient::operator=(const Patient& patient)
 	{
 
 		if (this != &patient) {
-
-			delete[] m_patientName;
-			m_patientName = new char[U.strlen(patient.m_patientName) + 1];
-			U.strcpy(m_patientName, patient.m_patientName, maxNameLen);
+			U.aloCopy(m_patientName, patient.m_patientName, maxNameLen);
 
 			m_OHIP = patient.m_OHIP;
 			m_ticket = patient.m_ticket;
@@ -70,7 +66,7 @@ namespace seneca {
 		return m_ticket.time();
 	}
 
-	Time Patient::number() const
+	int Patient::number() const
 	{
 		return m_ticket.number();
 	}

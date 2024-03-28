@@ -32,7 +32,6 @@ namespace seneca {
 	Time::Time(unsigned int min)
 	{
 		m_totalMin = min;
-
 	}
 
 	std::ostream& Time::write(std::ostream& ostr) const

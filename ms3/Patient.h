@@ -49,7 +49,7 @@ namespace seneca {
 		void setArrivalTime();
 
 		Time time() const;
-		Time number() const;
+		int number() const;
 
 		operator bool() const;
 		operator const char* () const;
