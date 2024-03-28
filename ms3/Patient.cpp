@@ -133,7 +133,6 @@ namespace seneca {
 		const int maxNum = 999999999;
 		const int maxName = 51;
 
-		char comma{};
 		char tmpName[maxName]{};
 		int tmpOHIP = 0;
 
