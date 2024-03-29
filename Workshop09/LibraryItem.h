@@ -18,7 +18,7 @@ namespace seneca {
 
 		LibraryItem(const LibraryItem& lib);
 		LibraryItem& operator=(const LibraryItem& lib);
-		~LibraryItem();
+		virtual ~LibraryItem();
 
 		virtual std::ostream& display(std::ostream& ostr = std::cout) const;
 	};
