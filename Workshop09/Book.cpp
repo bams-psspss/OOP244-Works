@@ -6,6 +6,7 @@ Date Completed:		29 / 03 / 2024
 **************************************************/
 #define _CRT_SECURE_NO_WARNINGS
 #include <iostream>
+#include <cstring>
 #include "Book.h"
 
 using namespace std;
