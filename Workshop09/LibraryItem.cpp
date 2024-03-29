@@ -38,7 +38,7 @@ namespace seneca {
 	}
 
 	LibraryItem::~LibraryItem(){
-		delete m_title;
+		delete[] m_title;
 	}
 
 	std::ostream& LibraryItem::display(std::ostream& ostr) const {
