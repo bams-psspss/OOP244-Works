@@ -1,0 +1,7 @@
+/*************************************************
+Name:			Pattarawan Saravaneeyawong
+Seneca Email:		psaravaneeyawong@myseneca.ca
+Student ID:		130618234
+Date Completed:		29 / 03 / 2024
+**************************************************/
+In this workshop, I think I have more confident in the Rule of Three more than before. I know how to copy and assign it to other object safely. I know how inheritance works and how to call function from the parent class. While I was doing this workshop, I came across some Youtube vdo about using '\n' instead of end, because they said that using endl is more work than '\n', so in this workshop, I just replace endl with the '\n'.
