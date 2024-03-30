@@ -139,12 +139,12 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="main.cpp" />
     <ClCompile Include="TestPatient.cpp" />
     <ClCompile Include="IOAble.cpp" />
     <ClCompile Include="Patient.cpp" />
     <ClCompile Include="Ticket.cpp" />
     <ClCompile Include="Time.cpp" />
+    <ClCompile Include="TrgP_Tester.cpp" />
     <ClCompile Include="TriagePatient.cpp" />
     <ClCompile Include="Utils.cpp" />
   </ItemGroup>

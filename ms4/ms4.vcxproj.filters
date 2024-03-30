@@ -36,7 +36,7 @@
     <ClCompile Include="Utils.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="main.cpp">
+    <ClCompile Include="TrgP_Tester.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

@@ -56,6 +56,7 @@ namespace seneca {
 				m_symptom = new char[U.strlen(tmpSymp) + 1];
 				U.strcpy(m_symptom, tmpSymp, 511);
 
+				nextTriageTicket = Patient::number() + 1;
 			}
 			else {
 				cout << "Symptoms: ";
