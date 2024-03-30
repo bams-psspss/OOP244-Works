@@ -7,8 +7,8 @@ namespace seneca {
 	const int maxSympLen = 512;
 
 
-	TriagePatient::TriagePatient() : m_symptom(nullptr), Patient(nextTriageTicket) {
-		nextTriageTicket++;
+	TriagePatient::TriagePatient() : Patient(nextTriageTicket), m_symptom(nullptr) {
+		nextTriageTicket =+ 1;
 	}
 
 	TriagePatient::~TriagePatient() {
