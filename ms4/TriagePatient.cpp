@@ -8,7 +8,7 @@ namespace seneca {
 
 
 	TriagePatient::TriagePatient() : Patient(nextTriageTicket), m_symptom(nullptr) {
-		nextTriageTicket =+ 1;
+		nextTriageTicket++;
 	}
 
 	TriagePatient::~TriagePatient() {
