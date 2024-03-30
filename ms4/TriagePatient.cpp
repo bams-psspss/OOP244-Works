@@ -30,6 +30,7 @@ namespace seneca {
 		}
 		else{
 			Patient::write(ostr);
+			ostr << ",";
 			ostr << m_symptom;
 		}
 		return ostr;
