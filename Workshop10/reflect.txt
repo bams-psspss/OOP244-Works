@@ -1,0 +1,9 @@
+/*************************************************
+Name:			Pattarawan Saravaneeyawong
+Seneca Email:		psaravaneeyawong@myseneca.ca
+Student ID:		130618234
+Date Completed:		April 06 2024
+**************************************************/
+For the workshop 10, I think the template thing is quite complicated if we do not know what is going on ion the main or what is the purpose of that function. At frist I blindly do it without reading the main function, which I know I should have not done that, thenI struggle for few hours and decided to go back and read the main and then I realize it is a little more simple than I thought it would be (kind of). 
+
+For milestone04, for now everything looks good and the program goes and it should go, I am now having difficult time with ms05.
