@@ -284,7 +284,8 @@ namespace seneca {
 		Menu lineup("Select The Lineup:\n1- Contagion Test\n2- Triage", 1);
 		int selection = 0;
 		int i = 0;
-		int num = 0;
+		int num = 1;
+		bool found = false;
 
 		lineup.printMenu();
 		cin >> selection;
@@ -299,16 +300,17 @@ namespace seneca {
 					cout.fill(' ');
 					cout.width(4);
 					cout.setf(ios::left);
-					cout << 1 + num++;
+					cout << num++;
 					cout.unsetf(ios::left);
 
 					cout << "- ";
 					
 					m_patLine[i]->write(clog);
 					cout << endl;
+					found = true;
 				}
 			}
-			if (num == 0) {
+			if (!found) {
 				cout << "Line up is empty!\n";
 			}
 
@@ -320,16 +322,18 @@ namespace seneca {
 					cout.fill(' ');
 					cout.width(4);
 					cout.setf(ios::left);
-					cout << 1 + num++;
+					cout << num++;
 					cout.unsetf(ios::left);
 
 					cout << "- ";
 
 					m_patLine[i]->write(clog);
 					cout << endl;
+					found = true;
+
 				}
 			}
-			if (num == 0) {
+			if (!found) {
 				cout << "Line up is empty!\n";
 			}
 
