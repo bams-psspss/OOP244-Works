@@ -202,7 +202,7 @@ namespace seneca {
 
 			case 2:
 				cin.ignore();
-				cout << "Please enter patient information:" << endl;
+				cout << "Please enter patient information: " << endl;
 				cin.clear();
 
 				m_patLine[m_numPat] = new TriagePatient;
@@ -211,7 +211,7 @@ namespace seneca {
 
 				cout << "\n******************************************\n";
 				cout << *m_patLine[m_numPat];
-				cout << "Estimated Wait Time : " << getWaitTime(*m_patLine[m_numPat]);
+				cout << "Estimated Wait Time: " << getWaitTime(*m_patLine[m_numPat]);
 				cout << "\n******************************************\n\n";
 
 				m_numPat++;
