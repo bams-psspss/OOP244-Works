@@ -242,7 +242,7 @@ namespace seneca {
 			index = indexOfFirstInLine('C');
 			if (index != -1) {
 				cout << "Call time: [" << time << "]" << endl;
-				cout << "Calling for " << *m_patLine[index];
+				cout << "Calling at for " << *m_patLine[index];
 				setAverageWaitTime(*m_patLine[index]);
 				removeDynamicElement(m_patLine, index, m_numPat);
 
@@ -258,8 +258,8 @@ namespace seneca {
 			index = indexOfFirstInLine('T');
 
 			if (index != -1) {
-				cout << "Call time [" << time << "]" << endl;
-				cout << "Calling for " << *m_patLine[index];
+				cout << "Call time: [" << time << "]" << endl;
+				cout << "Calling at for " << *m_patLine[index];
 				setAverageWaitTime(*m_patLine[index]);
 				removeDynamicElement(m_patLine, index, m_numPat);
 			}
