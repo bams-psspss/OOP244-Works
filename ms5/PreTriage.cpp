@@ -299,16 +299,16 @@ namespace seneca {
 			for (i = 0; i < m_numPat; i++) {
 				if (m_patLine[i]->type() == 'C') {
 
-					cout.fill(' ');
-					cout.width(3);
-					cout.setf(ios::left);
-					cout << num++;
+					clog.fill(' ');
+					clog.width(4);
+					clog.setf(ios::left);
+					clog << num++;
 
-					cout.unsetf(ios::left);
-					cout << "- ";
+					clog.unsetf(ios::left);
+					clog << "- ";
 
 					m_patLine[i]->write(clog);
-					cout << endl;
+					clog << endl;
 					found = true;
 				}
 			}
@@ -321,16 +321,16 @@ namespace seneca {
 		case 2:
 			for (i = 0; i < m_numPat; i++) {
 				if (m_patLine[i]->type() == 'T') {
-					cout.fill(' ');
-					cout.width(3);
-					cout.setf(ios::left);
-					cout << num++;
+					clog.fill(' ');
+					clog.width(4);
+					clog.setf(ios::left);
+					clog << num++;
 
-					cout.unsetf(ios::left);
-					cout << "- ";
+					clog.unsetf(ios::left);
+					clog << "- ";
 
 					m_patLine[i]->write(clog);
-					cout << endl;
+					clog << endl;
 					found = true;
 
 				}
