@@ -129,7 +129,7 @@
   <ItemGroup>
     <ClCompile Include="IOAble.cpp" />
     <ClCompile Include="Menu.cpp" />
-    <ClCompile Include="ms52_test.cpp" />
+    <ClCompile Include="ms55_test.cpp" />
     <ClCompile Include="Patient.cpp" />
     <ClCompile Include="PreTriage.cpp" />
     <ClCompile Include="TestPatient.cpp" />

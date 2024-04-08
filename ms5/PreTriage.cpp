@@ -184,11 +184,12 @@ namespace seneca {
 			{
 			case 1:
 				cin.ignore();
-				cout << "Please enter patient information:" << endl;
-
+				cout << "Please enter patient information: " << endl;
+				cin.clear();
 				m_patLine[m_numPat] = new TestPatient;
 
 				cin >> *m_patLine[m_numPat];
+
 				m_patLine[m_numPat]->setArrivalTime();
 
 				cout << "\n******************************************\n";
@@ -202,6 +203,7 @@ namespace seneca {
 			case 2:
 				cin.ignore();
 				cout << "Please enter patient information:" << endl;
+				cin.clear();
 
 				m_patLine[m_numPat] = new TriagePatient;
 				cin >> *m_patLine[m_numPat];
@@ -296,15 +298,14 @@ namespace seneca {
 		case 1:
 			for (i = 0; i < m_numPat; i++) {
 				if (m_patLine[i]->type() == 'C') {
-					cout << num++;
 
 					cout.fill(' ');
 					cout.width(3);
 					cout.setf(ios::left);
-					cout << " ";
-					cout << "- ";
+					cout << num++;
 
 					cout.unsetf(ios::left);
+					cout << "- ";
 
 					m_patLine[i]->write(clog);
 					cout << endl;
@@ -320,15 +321,13 @@ namespace seneca {
 		case 2:
 			for (i = 0; i < m_numPat; i++) {
 				if (m_patLine[i]->type() == 'T') {
-					cout << num++;
-
 					cout.fill(' ');
 					cout.width(3);
 					cout.setf(ios::left);
-					cout << " ";
-					cout << "- ";
+					cout << num++;
 
 					cout.unsetf(ios::left);
+					cout << "- ";
 
 					m_patLine[i]->write(clog);
 					cout << endl;
