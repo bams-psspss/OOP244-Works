@@ -1,0 +1,9 @@
+/*************************************************
+Name:			Pattarawan Saravaneeyawong
+Seneca Email:		psaravaneeyawong@myseneca.ca
+Student ID:		130618234
+Date Completed:		April 08, 2024
+**************************************************/
+For overall in this project, I learn more about C++ in many ways and how to apply it in real life. I learn that Object orientation is very convineint in making many things, and I like it when it have something like inheritance or like abstract class. I like the idea that you have an idea for this program but yet did not know how to do it. I find it very exiciting to do some research and see other people's code to see how they think and how they organize their code. I used to think that the more you make your code looks simple by doing everyhting line by line is a good practice, but when I have a meeting with Prof.Fardad to see my milestone 3, he just show how to think and do the function in a simplier way.
+
+The challenges I found in doing this project is that, mostly it just myself having a bad time management. Other than that, the challenge I found is that the bigger the program the bigger the screen / monitor I need. Because I need to flip from one window to another one or when I divide the mother into half the letter is too small and I can't focus it.
