@@ -180,13 +180,11 @@ namespace seneca {
 		if (m_numPat < maxPat) {
 			theMenu.printMenu();
 			cin >> selection;
-			if (selection > 0 && selection < 3) {
-				cout << "Please enter patient information:" << endl;
-			}
 			switch (selection)
 			{
 			case 1:
 				cin.ignore();
+				cout << "Please enter patient information:" << endl;
 
 				m_patLine[m_numPat] = new TestPatient;
 
@@ -203,6 +201,7 @@ namespace seneca {
 
 			case 2:
 				cin.ignore();
+				cout << "Please enter patient information:" << endl;
 
 				m_patLine[m_numPat] = new TriagePatient;
 				cin >> *m_patLine[m_numPat];
