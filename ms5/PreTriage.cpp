@@ -194,7 +194,7 @@ namespace seneca {
 
 				cout << "\n******************************************\n";
 				cout << *m_patLine[m_numPat];
-				cout << "Estimated Wait Time : " << getWaitTime(*m_patLine[m_numPat]);
+				cout << "Estimated Wait Time: " << getWaitTime(*m_patLine[m_numPat]);
 				cout << "\n******************************************\n\n";
 
 				m_numPat++;
